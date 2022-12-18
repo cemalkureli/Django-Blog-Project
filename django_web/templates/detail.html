@@ -1,0 +1,76 @@
+{% extends 'layout.html' %}
+{% load static %}
+{% block body %}
+<div class="row">
+    <div class = "col -md-10 offset-md-1">
+        <div class="col-lg-8">
+            <!-- Post content-->
+            <article>
+                <!-- Post header-->
+                <header class="mb-4">
+                    <!-- Post title-->
+                    <h3 class="fw-bolder mb-1">{{article.title}}</h3>
+                    <hr>
+                    <!-- Post meta content-->
+                    <div class="text-muted fst-italic mb-2"> Posted on {{article.created_date}}</div>
+                    <!-- Post categories-->
+                    <a class="lead">Published by {{article.author.username}}</a>
+                </header>
+                <!-- Preview image figure-->
+                {% if article.article_image %} 
+                <img class="img-fluid rounded" src="{{article.article_image.url}}" alt="..." ></img>
+                {% endif %}
+                <!-- Post content-->
+                <section class="mb-5">
+                    <p class="fs-5 mb-4"><br> {{article.content|safe}} </p> 
+                </section>
+            </article>
+            <br><br><br><br>
+            <h5 class="card-header"> Comments </h5>
+            {% if comments %}
+            {% for comment in comments  %}
+            <br>
+            <!-- Single comment-->
+            <div class="breadcrumb d-flex justify-content-between">
+                <div class="d-flex">
+                    <div class="flex-shrink-0"><img class="rounded-circle" src="{% static 'images/32_comment_pic.png' %}"/></div>
+                    <div class="ms-3">
+                        <div class="fw-bold"><h6>&nbsp;&nbsp;{{comment.comment_author}}</h6></div>
+                        &nbsp; {{comment.comment_content}}
+                    </div>
+                </div>
+                <strong>{{comment.comment_date}} </strong>
+            </div>
+            <hr>
+            {% endfor %}
+            
+            {% else %}
+            <div class="alert alert-danger" role="alert">
+                There are no comments here.
+              </div>
+            {% endif %}
+            <br><br><br>
+            <!-- Comments section-->
+            <div class="card my-5">
+                <h5 class="card-header"> Write a Comment... </h5>
+                <div class="card-body">
+                    <form class="mb-4" method = "post" action = "{% url 'article:addcomment' article.id %}">
+                        {% csrf_token %}
+                        <div class="form-group">
+                            <label for="formGroupExampleInput">Name</label>
+                            <input name = "comment_author" type="text" class="form-control" id="formGroupExampleInput" placeholder="Your Name">
+                        </div>
+                        <div class="form-group">
+                            <label for="exampleFormControlTextarea1">Comments</label>
+                            <textarea name = "comment_content" class="form-control" id="exampleFormControlTextarea1" rows="3" placeholder="Add a comment..."></textarea>
+                          </div>
+                        <button type = "submit" class = "btn btn-secondary"> Submit </button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+{% endblock body %}
+

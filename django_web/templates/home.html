@@ -1,0 +1,17 @@
+{% extends 'layout.html' %} 
+
+{% block body %} 
+<br><br><br>
+<div class = "jumbotron text-center"> 
+    <div class = "container">
+        <h1 class = "display-4"> Welcome to the Software Blog.</h1>
+        <br>
+        <p class = "display-5"> As developers on this blog, you can share your blog posts and help people find what they're looking for. </p>   
+    </div>
+</div>
+<br>
+{% if request.user.is_authenticated %}
+
+{% endif %}
+{% endblock body %}
+

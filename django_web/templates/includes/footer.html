@@ -1,0 +1,15 @@
+{% load static %}
+<footer class="footer-07" style ="background-color:#343a40!important;">
+    <div class="container">
+        <div class="row justify-content-center">
+            <div class="col-md-12 text-center">
+                <h2 class="logo"><img src="{% static 'images/ck_blog.png' %}"></h2>
+                <p class="menu">
+                <a style = "padding:16px;" href="{% url 'home' %}">Home </a>
+                <a style = "padding:16px;" href="{% url 'about' %}">About</a>
+                <a style = "padding:16px;" href="{% url 'article:articles' %}">Articles</a>
+                </p>
+            </div>
+        </div>
+    </div>
+</footer>
