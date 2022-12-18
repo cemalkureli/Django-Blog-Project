@@ -38,7 +38,7 @@ Install requirements 🛠
 
 Run migrations for Database 
 
-`$ cd django_web`
+`$ cd django_web` (Make Sure you are in directory same as manage.py)
 
 `$ python manage.py makemigrations`
 
