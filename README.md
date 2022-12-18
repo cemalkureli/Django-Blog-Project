@@ -1,15 +1,19 @@
 # Django-Blog-Project
 
 
-### Development 👨‍💻
+### Development 👨
 **Note** : Make sure you have Python version 3.8+
 
 
-### Environment Setup 🚀
+### Environment Setup 
+
+`$ mkdir folder_name`
+
+`$ cd folder_name`
 
 `$ git clone https://github.com/cemalkureli/Django-Blog-Project.git`
 
-`$ cd django_project_blogapp/`
+`$ cd Django-Blog-Project/`
 
 
 If virtualenv is not installed;
@@ -34,6 +38,8 @@ Install requirements 🛠
 
 Run migrations for Database 
 
+`$ cd django_web`
+
 `$ python manage.py makemigrations`
 
 `$ python manage.py migrate`
@@ -42,6 +48,14 @@ Run migrations for Database
 Create superuser for Admin Login 🔐
 
 `$ python manage.py createsuperuser`
+
+
+Python asks if you create superuser;
+
+`Username: `
+`Email: `
+`Password: `
+`Password Again: `
 
 
 All Set! 🤩
@@ -54,7 +68,9 @@ Now you can run the server to see your application up & running 🚀
 
 To exit the environment ❎
 
-`$ deactivate`
+`CTRL + C --> to exit runserver`
+
+`$ deactivate --> to exit venv`
 
 
 Every time you want to open the application in browser, make sure you run:
@@ -62,3 +78,21 @@ Every time you want to open the application in browser, make sure you run:
 `$ source venv/Scripts/activate`
 
 `$ python manage.py runserver`
+
+
+
+If you get AttributeError: module 'collections' has no attribute 'Iterator' error;
+
+You should check your pip modules;
+
+`$ pip list `
+
+If the modules in the requirements.txt are outdated, replace them with your own modules, save the requirements.txt again 
+and redo the installation steps from the beginning. 🤩🤩🤩
+
+
+After all these steps , you can start testing and developing this project.
+
+###That's it! 👨
+
+
