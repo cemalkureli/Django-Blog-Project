@@ -2,7 +2,7 @@
 
 
 ### Development 👨
-**Note** : Make sure you have Python version 3.8+
+**Note** : Make sure you have Python version 3.10+
 
 
 ### Environment Setup 
